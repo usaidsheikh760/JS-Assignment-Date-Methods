@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Q1;
+
+        let currentDate = new Date();
+        document.write("<h3>Q1:</h3>");
+        document.write(currentDate);
+
+
+        //end;
+
+        //Q2;
+
+
+        document.write("<h3>Q2:</h3>");
+        let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        let currentMonth = months[currentDate.getMonth()];
+        document.write("Current Month: " + currentMonth);
+
+
+        //end;
+
+        //Q3;
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+        let currentDay = days[currentDate.getDay()];
+        document.write("<h3>Q3:</h3>");
+        document.write("Current Day: " + currentDay);
+
+        //end;
+
+        //Q4;
+
+        if (currentDay === "Sun" || currentDay === "Sat") {
+            alert("It's Fun Day");
+        }
+
+        //end;
+
+
+        //Q5;
+
+
+        document.write("<h3>Q5:</h3>");
+
+        let currentDate1 = currentDate.getDate();
+        if (currentDate1 < 16) {
+            document.write("First Fifteen days of the month" + "<br");
+        }
+        else {
+            document.write("Last Fifteen days of the month");
+
+        }
+
+        //end;
+
+        //Q6;
+
+        let currentTime = currentDate.getTime();
+
+        document.write("<h3>Q6:</h3>");
+        document.write("Current date: " + currentDate + "<br>");
+        document.write("Elapsed milliseconds since January 1, 1970: " + currentTime + "<br>");
+        document.write("Elapsed minutes since January 1, 1970: " + currentTime / 60000 + "<br>");
+
+        //end;
+
+        //Q7;
+
+        let hours = currentDate.getHours();
+        document.write("<h3>Q7:</h3>");
+
+        if (hours >= 0 || hours < 12) {
+            document.write("It's A.M");
+        }
+        else {
+            document.write("It's P.M");
+
+        }
+
+        //end;
+
+        //Q8;
+
+        let lastDay2020 = new Date("December 31, 2020");
+
+        document.write("<h3>Q8:</h3>");
+        document.write("Later Date: " + lastDay2020);
+
+        //end;
+
+        //Q9;
+
+        let startOfRamadan = new Date("June 18, 2015");
+        let today = new Date();
+        let diff = today.getTime() - startOfRamadan.getTime();
+        let daysSinceRamadan = Math.round(diff / (1000 * 60 * 60 * 24));
+
+        document.write("<h3>Q9:</h3>");
+        document.write(daysSinceRamadan + " days have passed since 1st ramadan of 2015");
+
+        //end;
+
+        //Q10;
+
+        let seconds = new Date("January 01, 2015");
+        let seconds1 = new Date("December 05, 2015 22:50:16");
+
+        let diff1 = seconds1.getTime() - seconds.getTime();
+        let diff2 = (diff1 / 1000);
+
+        document.write("<h3>Q10:</h3>");
+        document.write("Reference date is Dec 05, 2015" + "<br>");
+        document.write(diff2 + " seconds had passed since beginning of 2015");
+
+        //end;
+
+        //Q11;
+        let currentDate2 = new Date();
+        let hours1 = currentDate2.getHours();
+        hours1 = currentDate2.setHours(hours1 - 1);
+
+
+        document.write("<h3>Q11:</h3>");
+        document.write("Current date: " + currentDate + "<br>");
+        document.write("1 hour ago, it was " + currentDate2);
+
+        //end;
+
+        //Q12;
+
+        let newDate = new Date();
+        let years = newDate.getFullYear();
+        years = newDate.setFullYear(years - 100);
+
+        document.write("<h3>Q12:</h3>");
+        document.write("Current date: " + currentDate + "<br>");
+        document.write("100 years back, it was " + newDate);
+
+        //end;
+
+        //Q13;
+
+        let user = prompt("What is your age");
+        let newDate1 = new Date();
+        let years1 = newDate1.getFullYear();
+        years1 = (years1 - user);
+
+        document.write("<h3>Q13:</h3>");
+        document.write("Your age is: " + user + "<br>");
+        document.write("Your birth year is: " + years1);
+
+        //end;
+
+        //Q14;
+
+        // Prompt user for input
+        var customerName = prompt("Enter customer name:");
+        var currentMonth1 = prompt("Enter current month (e.g. January):");
+        var numberOfUnits = parseFloat(prompt("Enter number of units consumed:"));
+        var chargesPerUnit = 16;
+        var latePaymentSurcharge = 350;
+
+        
+        var netAmountPayable = numberOfUnits * chargesPerUnit;
+        var grossAmountPayable = netAmountPayable + latePaymentSurcharge;
+
+        document.write("<h3>Q14:</h3>");
+        document.write("<h4>K-Electric Bill</h4><br>");
+        document.write("Customer Name: " + customerName + "<br>");
+        document.write("Month: " + currentMonth1 + "<br>");
+        document.write("Number of units: " + numberOfUnits.toFixed(2) + "<br>");
+        document.write("Charges per unit: " + chargesPerUnit.toFixed(2) + "<br>");
+        document.write("Net Amount Payable (within Due Date): " + netAmountPayable.toFixed(2) + "<br>");
+        document.write("Late Payment Surcharge: " + latePaymentSurcharge.toFixed(2) + "<br>");
+        document.write("Gross Amount Payable (after Due Date): " + grossAmountPayable.toFixed(2) + "<br>");
+
+        //end;
+
+    </script>
+</body>
+
+</html>
